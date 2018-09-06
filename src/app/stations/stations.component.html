@@ -11,11 +11,21 @@
   <div>
     <h2>Add New Station</h2>
     <div>
-      <label>name:
-        <input placeholder="station name">
-      </label>
+      <p>
+        Value: {{ stationName.value }}
+      </p>
+      <div class="container">
+        <!-- <form> -->
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" [formControl]="stationName" required>
+          </div>
+          <button type="submit" (click)="addStation()"
+            class="btn btn-success">Submit
+          </button>
+        <!-- </form> -->
+      </div>
     </div>
-    <form >
   </div>
 
 </div>
