@@ -4,22 +4,24 @@
     <ul>
       <li *ngFor="let bus of buses">
         <span class="badge">{{bus.busId}}</span>{{bus.name | uppercase}}
-        <span>  |  {{bus.type}}</span>
+        <span> | {{bus.type}}</span>
       </li>
     </ul>
   </div>
-  <!-- <div class="col-md-4">
+  <div class="col-md-4">
     <h2>Add New Bus</h2>
-    <form>
+    <form [formGroup]="busForm" (ngSubmit)="addBus()">
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" formControl="busName" required>
+        <label for="name">Bus Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" required>
       </div>
       <div class="form-group">
-        <label for="name">TYpe</label>
-        <input type="text" class="form-control" id="name" formControl="busType" required>
+        <label for="type">Bus Type</label>
+        <select class="form-control" id="type" formControlName="type" required>
+          <option *ngFor="let busType of busTypes" [value]="busType">{{busType}}</option>
+        </select>
       </div>
-      <button type="submit" (click)="addBus()" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success">Submit</button>
     </form>
-  </div> -->
+  </div>
 </div>

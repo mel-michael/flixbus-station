@@ -10,20 +10,22 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class BusesComponent implements OnInit {
   buses = BUSES;
   busForm =  new FormGroup({
-    busName: new FormControl(''),
-    busType: new FormControl('')
+    name: new FormControl(''),
+    type: new FormControl('')
   });
+  busTypes = [ 'regular', 'doubledecker'];
 
   constructor() {}
 
   addBus(): void {
     const randNum = Math.floor(Math.random() * 1000);
-    // const newStation = {
-    //   id: randNum,
-    //   name: this.stationName.value,
-    //   slots: []
-    // };
-    // this.buses.push(newStation);
+    const newBus = {
+      busId: randNum,
+      plateNumber: `BUS-${randNum}-${randNum}`,
+      name: this.busForm.value.name,
+      type: this.busForm.value.type
+    };
+    this.buses.push(newBus);
   }
 
   ngOnInit() {}
