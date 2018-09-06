@@ -1,0 +1,26 @@
+[
+  {
+    "busId": 11,
+    "plateNumber": "BUS-XXX-XXX",
+    "busName": "bus-red",
+    "type": "regular"
+  },
+  {
+    "busId": 12,
+    "plateNumber": "BUS-XXX-XXX",
+    "busName": "bus-green",
+    "type": "regular"
+  },
+  {
+    "busId": 13,
+    "plateNumber": "BUS-XXX-XXX",
+    "busName": "bus-blue",
+    "type": "doubledecker"
+  },
+  {
+    "busId": 14,
+    "plateNumber": "BUS-XXX-XXX",
+    "busName": "bus-black",
+    "type": "regular"
+  }
+]
