@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2>Bus List</h2>
+    <ul>
+      <li *ngFor="let bus of buses">
+        <span class="badge">{{bus.busId}}</span>{{bus.name | uppercase}}
+        <span>  |  {{bus.type}}</span>
+      </li>
+    </ul>
+  </div>
+  <!-- <div class="col-md-4">
+    <h2>Add New Bus</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" formControl="busName" required>
+      </div>
+      <div class="form-group">
+        <label for="name">TYpe</label>
+        <input type="text" class="form-control" id="name" formControl="busType" required>
+      </div>
+      <button type="submit" (click)="addBus()" class="btn btn-success">Submit</button>
+    </form>
+  </div> -->
+</div>
