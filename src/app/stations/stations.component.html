@@ -1,31 +1,18 @@
-
-<h2>Bus Stations</h2>
-<div>
-  <div>
+<div class="row">
+  <div class="col-md-8">
+    <h2>Bus Stations</h2>
     <ul>
       <li *ngFor="let station of stations">
-        {{station.name}}
+        <span class="badge">{{station.id}}</span>{{station.name | uppercase}}
       </li>
     </ul>
   </div>
-  <div>
+  <div class="col-md-4">
     <h2>Add New Station</h2>
-    <div>
-      <p>
-        Value: {{ stationName.value }}
-      </p>
-      <div class="container">
-        <!-- <form> -->
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" [formControl]="stationName" required>
-          </div>
-          <button type="submit" (click)="addStation()"
-            class="btn btn-success">Submit
-          </button>
-        <!-- </form> -->
-      </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [formControl]="stationName" required>
     </div>
+    <button type="submit" (click)="addStation()" class="btn btn-success">Submit</button>
   </div>
-
 </div>

@@ -17,7 +17,7 @@ export class StationsComponent implements OnInit {
     const randNum = Math.floor(Math.random() * 1000);
     const newStation = {
       id: randNum,
-      name: `station–${randNum}`,
+      name: this.stationName.value,
       slots: []
     };
     this.stations.push(newStation);
