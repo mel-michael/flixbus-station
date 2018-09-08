@@ -22,6 +22,7 @@ export class BusesComponent implements OnInit {
   constructor() {}
 
   addBus(): void {
+    this.isBusSlotFree = true;
     const { station, name, type } = this.busForm.value;
     const randNum = Math.floor(Math.random() * 1000);
     const newBus = {

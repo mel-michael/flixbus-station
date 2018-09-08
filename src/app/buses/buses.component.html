@@ -2,9 +2,9 @@
   <div class="col-md-8">
     <h2>Bus List</h2>
     <ul>
-      <li *ngFor="let bus of buses">
-        <span class="badge">{{bus.busId}}</span>{{bus.name | uppercase}}
-        <span> | {{bus.type}}</span>
+      <li *ngFor="let bus of buses; let i=index">
+        <span class="badge">{{i + 1}}</span>{{bus.name | uppercase}}
+        <span> | {{bus.type}}  | {{bus.plateNumber}}</span>
       </li>
     </ul>
   </div>
