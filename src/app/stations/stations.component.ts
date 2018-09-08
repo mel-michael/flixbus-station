@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { STATIONS } from '../mockstations';
 import { FormControl, FormGroup } from '@angular/forms';
+
 import { DataService } from '../data.service';
 
 @Component({
@@ -37,6 +37,10 @@ export class StationsComponent implements OnInit {
       .subscribe(data => this.stations = data,
         error => console.log('Error:', error)
       );
+  }
+
+  deleteStation(station): void {
+    this.dataService.deleteStation(station.id);
   }
 
   ngOnInit() {

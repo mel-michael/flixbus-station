@@ -23,5 +23,13 @@ export class DataService {
     return this.http.post(STATION_URL, body, httpOptions)
   }
 
+  updateStation(body) {
+    this.http.put(`${STATION_URL}/${body.id}`, body, httpOptions)
+  }
+
+  deleteStation(id) {
+    return this.http.delete(`${STATION_URL}/${id}`, httpOptions).subscribe();
+  }
+
 }
 
