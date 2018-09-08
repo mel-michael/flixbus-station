@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DataService } from './data.service'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { StationsComponent } from './stations/stations.component';
@@ -16,9 +18,10 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ DataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

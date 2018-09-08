@@ -44,28 +44,28 @@
       "plateNumber": "BUS-XXX-XXX",
       "busName": "bus-red",
       "type": "regular",
-      "stationId": "st-10"
+      "stationId": 1
     },
     {
       "id": 12,
       "plateNumber": "BUS-XXX-YYY",
       "busName": "bus-green",
       "type": "regular",
-      "stationId": "st-11"
+      "stationId": 1
     },
     {
       "id": 13,
       "plateNumber": "BUS-XXX-ZZZ",
       "busName": "bus-blue",
       "type": "doubledecker",
-      "stationId": "st-11"
+      "stationId": 2
     },
     {
       "id": 14,
       "plateNumber": "BUS-XYZ-XXX",
       "busName": "bus-black",
       "type": "regular",
-      "stationId": "st-10"
+      "stationId": 2
     }
   ]
 }

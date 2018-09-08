@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { STATIONS } from '../mockstations';
+// import { STATIONS } from '../mockstations';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-stations',
@@ -8,13 +9,13 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./stations.component.css']
 })
 export class StationsComponent implements OnInit {
-  stations = STATIONS;
+  stations;
   stationForm = new FormGroup({
     name: new FormControl(''),
     numOfSlots: new FormControl('')
   });
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   addStation(): void {
     const randNum = Math.floor(Math.random() * 1000);
@@ -30,5 +31,15 @@ export class StationsComponent implements OnInit {
     console.log(this.stations, this.stationForm.value);
   }
 
-  ngOnInit() {}
+  getBusStations(): void {
+    this.dataService.getStations()
+      .subscribe(data => this.stations = data,
+        error => console.log('Error:', error)
+      );
+  }
+
+
+  ngOnInit() {
+    this.getBusStations();
+  }
 }
