@@ -1,26 +1,30 @@
 export const BUSES = [
   {
-    "busId": 11,
-    "plateNumber": "BUS-ABC-XXX",
-    "name": "bus-red",
-    "type": "regular"
+    'id': 11,
+    'plateNumber': 'BUS-ABC-XXX',
+    'name': 'bus-red',
+    'type': 'regular',
+    'stationId': 1
   },
   {
-    "busId": 12,
-    "plateNumber": "BUS-XXX-XYZ",
-    "name": "bus-green",
-    "type": "regular"
+    'id': 12,
+    'plateNumber': 'BUS-XXX-XYZ',
+    'name': 'bus-green',
+    'type': 'regular',
+    'stationId': 2
   },
   {
-    "busId": 13,
-    "plateNumber": "BUS-YYY-XXX",
-    "name": "bus-blue",
-    "type": "doubledecker"
+    'id': 13,
+    'plateNumber': 'BUS-YYY-XXX',
+    'name': 'bus-blue',
+    'type': 'doubledecker',
+    'stationId': 2
   },
   {
-    "busId": 14,
-    "plateNumber": "BUS-XZZ-XXX",
-    "name": "bus-black",
-    "type": "regular"
+    'id': 14,
+    'plateNumber': 'BUS-ZZZ-XXX',
+    'name': 'bus-black',
+    'type': 'regular',
+    'stationId': 1
   }
 ]

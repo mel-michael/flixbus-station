@@ -23,15 +23,20 @@ export class BusesComponent implements OnInit {
 
   addBus(): void {
     this.isBusSlotFree = true;
+    let newSlot;
     const { station, name, type } = this.busForm.value;
     const randNum = Math.floor(Math.random() * 1000);
     const newBus = {
       name,
       type,
-      busId: randNum,
-      plateNumber: `BUS-${randNum}-${randNum}`,
+      id: randNum,
+      stationId: station.id,
+      plateNumber: `BUS-${randNum}-${randNum}`
     };
-    if (station.availableSlots < station.numOfSlots) {
+    if (station.availableSlots > 0) {
+      newSlot = station.slots.find(slot => !slot.busId);
+      newSlot.busId = randNum;
+      station.availableSlots--;
       this.buses.push(newBus);
     } else {
       this.isBusSlotFree = false;
