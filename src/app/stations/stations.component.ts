@@ -21,14 +21,15 @@ export class StationsComponent implements OnInit {
     const randNum = Math.floor(Math.random() * 1000);
     const newStation = {
       id: randNum,
+      name: this.stationForm.value.name,
       numOfSlots: this.stationForm.value.numOfSlots,
       availableSlots: this.stationForm.value.numOfSlots,
-      name: this.stationForm.value.name,
       slots: []
     };
-    // this.stations[randNum] = newStation;
-    this.stations.push(newStation);
-    console.log(this.stations, this.stationForm.value);
+    this.dataService.createStation(newStation)
+      .subscribe(() => this.getBusStations(),
+      error => console.log('Error:', error)
+    );
   }
 
   getBusStations(): void {
@@ -37,7 +38,6 @@ export class StationsComponent implements OnInit {
         error => console.log('Error:', error)
       );
   }
-
 
   ngOnInit() {
     this.getBusStations();
