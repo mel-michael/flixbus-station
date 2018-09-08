@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { STATIONS } from '../mockstations';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-stations',
@@ -9,7 +9,10 @@ import { FormControl } from '@angular/forms';
 })
 export class StationsComponent implements OnInit {
   stations = STATIONS;
-  stationName = new FormControl('');
+  stationForm = new FormGroup({
+    name: new FormControl(''),
+    numOfSlots: new FormControl('')
+  });
 
   constructor() {}
 
@@ -17,10 +20,14 @@ export class StationsComponent implements OnInit {
     const randNum = Math.floor(Math.random() * 1000);
     const newStation = {
       id: randNum,
-      name: this.stationName.value,
+      numOfSlots: this.stationForm.value.numOfSlots,
+      availableSlots: this.stationForm.value.numOfSlots,
+      name: this.stationForm.value.name,
       slots: []
     };
+    // this.stations[randNum] = newStation;
     this.stations.push(newStation);
+    console.log(this.stations, this.stationForm.value);
   }
 
   ngOnInit() {}

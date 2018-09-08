@@ -1,26 +1,67 @@
-[
-  {
-    "busId": 11,
-    "plateNumber": "BUS-XXX-XXX",
-    "busName": "bus-red",
-    "type": "regular"
+{
+  "station": {
+    "st-10": {
+      "name": "station-blue",
+      "numOfSlots": 3,
+      "availableSlots": 1,
+      "slots": {
+        "11": {
+          "name": "st-11",
+          "busId": 14
+        },
+        "12": {
+          "name": "st-12"
+        },
+        "13": {
+          "name": "st-13",
+          "busId": 12
+        }
+      }
+    },
+    "st-11": {
+      "name": "station-blue",
+      "numOfSlots": 2,
+      "availableSlots": 0,
+      "slots": {
+        "11": {
+          "name": "st-11",
+          "busId": 13
+        },
+        "12": {
+          "name": "st-13",
+          "busId": 11
+        }
+      }
+    }
   },
-  {
-    "busId": 12,
-    "plateNumber": "BUS-XXX-XXX",
-    "busName": "bus-green",
-    "type": "regular"
-  },
-  {
-    "busId": 13,
-    "plateNumber": "BUS-XXX-XXX",
-    "busName": "bus-blue",
-    "type": "doubledecker"
-  },
-  {
-    "busId": 14,
-    "plateNumber": "BUS-XXX-XXX",
-    "busName": "bus-black",
-    "type": "regular"
-  }
-]
+  "bus": [
+    {
+      "busId": 11,
+      "plateNumber": "BUS-XXX-XXX",
+      "busName": "bus-red",
+      "type": "regular",
+      "stationId": "st-10"
+    },
+    {
+      "busId": 12,
+      "plateNumber": "BUS-XXX-XXX",
+      "busName": "bus-green",
+      "type": "regular",
+      "stationId": "st-11"
+    },
+    {
+      "busId": 13,
+      "plateNumber": "BUS-XXX-XXX",
+      "busName": "bus-blue",
+      "type": "doubledecker",
+      "stationId": "st-11"
+    },
+    {
+      "busId": 14,
+      "plateNumber": "BUS-XXX-XXX",
+      "busName": "bus-black",
+      "type": "regular",
+      "stationId": "st-10"
+    }
+  ]
+}
