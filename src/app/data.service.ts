@@ -24,11 +24,22 @@ export class DataService {
   }
 
   updateStation(body) {
-    this.http.put(`${STATION_URL}/${body.id}`, body, httpOptions)
+    return this.http.put(`${STATION_URL}/${body.id}`, body, httpOptions);
   }
 
   deleteStation(id) {
     return this.http.delete(`${STATION_URL}/${id}`, httpOptions).subscribe();
+  }
+
+  /** METHODS FOR BUS REQUESTS */
+
+  getBuses() {
+    return this.http.get(BUS_URL, httpOptions);
+  }
+
+  createBus(bus, station) {
+    this.updateStation(station);
+    return this.http.post(BUS_URL, bus, httpOptions)
   }
 
 }

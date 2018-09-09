@@ -27,7 +27,7 @@
           <option *ngFor="let station of stations" [ngValue]="station">{{station.name}}</option>
         </select>
       </div>
-      <p  *ngIf="!isBusSlotFree" class="form-group">There is no free slot in this station.</p>
+      <p *ngIf="!isBusSlotFree" class="form-group">There is no free slot in this station.</p>
       <button type="submit" class="btn btn-success">Add Bus</button>
     </form>
   </div>
