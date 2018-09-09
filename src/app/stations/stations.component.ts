@@ -10,6 +10,7 @@ import { DataService } from '../data.service';
 })
 export class StationsComponent implements OnInit {
   stations;
+  slots = [];
   stationForm = new FormGroup({
     name: new FormControl(''),
     numOfSlots: new FormControl('')
@@ -18,18 +19,26 @@ export class StationsComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   addStation(): void {
-    const randNum = Math.floor(Math.random() * 1000);
+    const randNum = Math.ceil(Math.random() * 1000);
+    const { name, numOfSlots } = this.stationForm.value;
     const newStation = {
+      name,
+      numOfSlots,
       id: randNum,
-      name: this.stationForm.value.name,
-      numOfSlots: this.stationForm.value.numOfSlots,
-      availableSlots: this.stationForm.value.numOfSlots,
-      slots: []
+      availableSlots: numOfSlots,
+      slots: this.createSlot(numOfSlots)
     };
     this.dataService.createStation(newStation)
       .subscribe(() => this.getBusStations(),
       error => console.log('Error:', error)
     );
+  }
+
+  createSlot(len) {
+    for (let i = 0; i < len; i++) {
+      this.slots.push({ id: Math.ceil(Math.random() * 100) });
+    }
+    return this.slots;
   }
 
   getBusStations(): void {
