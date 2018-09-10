@@ -47,7 +47,7 @@ export class DataService {
   }
 
   deleteBus(id, station) {
-    this.updateBus(station);
+    this.updateStation(station).subscribe();
     return this.http.delete(`${BUS_URL}/${id}`, httpOptions).subscribe();
   }
 
