@@ -1,25 +1,29 @@
-<div class="row">
-  <div class="col-md-8">
-    <h2>Bus Stations</h2>
-    <ul>
-      <li *ngFor="let station of stations; let i=index;">
-        <span class="badge">{{i + 1}}</span>{{station.name | uppercase}}
-        <span style="cursor: pointer" (click)="updateStation(station)">edit</span>
-      </li>
-    </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Bus Stations</h2>
+      <ul>
+        <li *ngFor="let station of stations; let i=index;">
+          <span class="badge">{{i + 1}}</span>{{station.name | uppercase}}
+          <span style="cursor: pointer" (click)="updateStation(station)">edit</span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h2>Add New Station</h2>
+      <form [formGroup]="stationForm" (ngSubmit)="addStation()">
+        <div class="form-group">
+          <label for="name">Station Name</label>
+          <input type="text" class="form-control" id="name" formControlName="name" placeholder="e.g. Beryl" required>
+        </div>
+        <div class="form-group">
+          <label for="num-of-slots">Number of Parking Slots</label>
+          <input type="number" class="form-control" id="num-of-slots" formControlName="numOfSlots" placeholder="e.g. 10"
+            required>
+        </div>
+        <button type="submit" class="btn btn-success">Add Station</button>
+      </form>
+    </div>
   </div>
-  <div class="col-md-4">
-    <h2>Add New Station</h2>
-    <form [formGroup]="stationForm" (ngSubmit)="addStation()">
-      <div class="form-group">
-        <label for="name">Station Name</label>
-        <input type="text" class="form-control" id="name" formControlName="name" placeholder="e.g. Beryl" required>
-      </div>
-      <div class="form-group">
-        <label for="num-of-slots">Number of Parking Slots</label>
-        <input type="number" class="form-control" id="num-of-slots" formControlName="numOfSlots" placeholder="e.g. 10" required>
-      </div>
-      <button type="submit" class="btn btn-success">Add Station</button>
-    </form>
-  </div>
+
 </div>

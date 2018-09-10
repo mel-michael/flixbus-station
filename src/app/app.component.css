@@ -16,6 +16,10 @@
   text-align: center;
 }
 
+.navbar {
+  padding: 16px 0;
+}
+
 @media (min-width: 992px) {
   .masthead {
     height: 100vh;
