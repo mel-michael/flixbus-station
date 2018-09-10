@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { randomBytes } from 'crypto-browserify';
 
 import { DataService } from '../data.service';
 
@@ -23,6 +24,7 @@ export class BusesComponent implements OnInit {
 
   addBus(): void {
     this.isBusSlotFree = true;
+    const alphaNumeric = randomBytes(3).toString('hex');
     const randNum = Math.floor(Math.random() * 1000);
     const { station, name, type } = this.busForm.value;
     const busData = {
@@ -30,7 +32,7 @@ export class BusesComponent implements OnInit {
       type,
       id: randNum,
       stationId: station.id,
-      plateNumber: `BUS-${randNum}-${randNum}`
+      plateNumber: `BUS-${alphaNumeric.slice(0, 3).toUpperCase()}-${alphaNumeric.slice(-3).toUpperCase()}`
     };
 
     if (!station.availableSlots) {
