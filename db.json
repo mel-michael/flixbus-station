@@ -1,0 +1,111 @@
+{
+  "station": [
+    {
+      "id": 1,
+      "name": "station-blue",
+      "numOfSlots": 3,
+      "availableSlots": 1,
+      "slots": [
+        {
+          "id": 11,
+          "busId": 72
+        },
+        {
+          "id": 12
+        },
+        {
+          "id": 13,
+          "busId": 12
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "station green",
+      "numOfSlots": 2,
+      "availableSlots": 0,
+      "slots": [
+        {
+          "id": 11,
+          "busId": 13
+        },
+        {
+          "id": 21,
+          "busId": 14
+        }
+      ]
+    },
+    {
+      "id": 500,
+      "name": "station-beryll",
+      "numOfSlots": 4,
+      "availableSlots": 3,
+      "slots": [
+        {
+          "id": 16,
+          "busId": 11
+        },
+        {
+          "id": 19
+        },
+        {
+          "id": 39
+        },
+        {
+          "id": 63
+        }
+      ]
+    },
+    {
+      "name": "Salvatore",
+      "numOfSlots": 2,
+      "id": 60,
+      "availableSlots": 2,
+      "slots": [
+        {
+          "id": 39
+        },
+        {
+          "id": 63
+        }
+      ]
+    }
+  ],
+  "bus": [
+    {
+      "id": 11,
+      "name": "bus-red",
+      "type": "regular",
+      "stationId": 500,
+      "plateNumber": "BUS-XXX-XXX"
+    },
+    {
+      "id": 12,
+      "name": "bus-green",
+      "type": "regular",
+      "stationId": 1,
+      "plateNumber": "BUS-XXX-YYY"
+    },
+    {
+      "id": 13,
+      "name": "bus-blue",
+      "type": "doubledecker",
+      "stationId": 2,
+      "plateNumber": "BUS-XXX-ZZZ"
+    },
+    {
+      "id": 14,
+      "name": "bus-black",
+      "type": "regular",
+      "stationId": 2,
+      "plateNumber": "BUS-XYZ-XXX"
+    },
+    {
+      "id": 72,
+      "name": "Holley Vans",
+      "type": "regular",
+      "stationId": 1,
+      "plateNumber": "BUS-72-72"
+    }
+  ]
+}
