@@ -4,6 +4,7 @@
     <ul>
       <li *ngFor="let station of stations; let i=index;">
         <span class="badge">{{i + 1}}</span>{{station.name | uppercase}}
+        <span style="cursor: pointer" (click)="updateStation(station)">edit</span>
       </li>
     </ul>
   </div>

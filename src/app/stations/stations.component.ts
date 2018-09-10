@@ -48,6 +48,11 @@ export class StationsComponent implements OnInit {
       );
   }
 
+  updateStation(data): void {
+    this.dataService.updateStation(data)
+      .subscribe(() => this.getBusStations());
+  }
+
   deleteStation(station): void {
     this.dataService.deleteStation(station.id);
   }
