@@ -66,9 +66,24 @@ export class BusesComponent implements OnInit {
       );
   }
 
-  // deleteStation(station): void {
-  //   this.dataService.deleteStation(station.id);
-  // }
+  deleteBus(busData): void {
+    const { id, stationId } = busData;
+    const busStation = this.stations.find(station => station.id === stationId);
+    const busSlot = busStation.slots.find(slot => slot.busId === id);
+
+    console.log(':::::', busData, busStation, busSlot);
+
+    // delete busSlot.busId;
+    const newStation = { ...busStation }
+    newStation.availableSlots++;
+    newStation.slots = busStation.slots.map((item) => {
+      if (item.id === busSlot.id) { return busSlot; }
+      return item;
+    });
+
+    console.log(busSlot, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', busStation, newStation);
+    // this.dataService.deleteBus(busData.id, busStation);
+  }
 
   ngOnInit() {
     this.getBuses();

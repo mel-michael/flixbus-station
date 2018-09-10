@@ -5,6 +5,7 @@
       <li *ngFor="let bus of buses; let i=index">
         <span class="badge">{{i + 1}}</span>{{bus.name | uppercase}}
         <span> | {{bus.type}}  | {{bus.plateNumber}}</span>
+        <span style="cursor: pointer;" (click)="deleteBus(bus)">delete</span>
       </li>
     </ul>
   </div>

@@ -42,5 +42,14 @@ export class DataService {
     return this.http.post(BUS_URL, bus, httpOptions)
   }
 
+  updateBus(body) {
+    return this.http.put(`${BUS_URL}/${body.id}`, body, httpOptions);
+  }
+
+  deleteBus(id, station) {
+    this.updateBus(station);
+    return this.http.delete(`${BUS_URL}/${id}`, httpOptions).subscribe();
+  }
+
 }
 
