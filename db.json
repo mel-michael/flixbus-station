@@ -2,7 +2,7 @@
   "station": [
     {
       "id": 1,
-      "name": "station-blue",
+      "name": "station blue",
       "numOfSlots": 3,
       "availableSlots": 1,
       "slots": [
@@ -37,7 +37,7 @@
     },
     {
       "id": 500,
-      "name": "station-beryll",
+      "name": "station beryl",
       "numOfSlots": 4,
       "availableSlots": 3,
       "slots": [

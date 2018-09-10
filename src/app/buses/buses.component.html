@@ -6,6 +6,7 @@
         <span class="badge">{{i + 1}}</span>{{bus.name | uppercase}}
         <span> | {{bus.type}}  | {{bus.plateNumber}}</span>
         <span style="cursor: pointer;" (click)="deleteBus(bus)">delete</span>
+        <span style="cursor: pointer;" (click)="updateBus(bus)">edit</span>
       </li>
     </ul>
   </div>

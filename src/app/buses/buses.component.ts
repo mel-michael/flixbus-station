@@ -66,6 +66,11 @@ export class BusesComponent implements OnInit {
       );
   }
 
+  updateBus(data): void {
+    this.dataService.updateBus(data)
+      .subscribe(() => this.getBuses());
+  }
+
   deleteBus(busData): void {
     const { id: busID, stationId } = busData;
     const busStation = this.stations.find(station => station.id === stationId);

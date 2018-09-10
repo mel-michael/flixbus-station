@@ -38,7 +38,7 @@ export class DataService {
   }
 
   createBus(bus, station) {
-    this.updateStation(station);
+    this.updateStation(station).subscribe();
     return this.http.post(BUS_URL, bus, httpOptions)
   }
 
