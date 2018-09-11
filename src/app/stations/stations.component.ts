@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-
 import { DataService } from '../data.service';
 
 @Component({
@@ -19,7 +18,7 @@ export class StationsComponent implements OnInit {
   showAddForm = false;
   addFormText = 'Add Station';
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {}
 
   addStation(): void {
     const randNum = Math.ceil(Math.random() * 1000);
@@ -55,21 +54,23 @@ export class StationsComponent implements OnInit {
         this.stations = data;
         this.temp = data;
       },
-        error => console.log('Error:', error)
-      );
+      error => console.log('Error:', error)
+    );
   }
 
   updateStation(data): void {
-    this.dataService.updateStation(data)
-      .subscribe(() => this.getBusStations());
+    this.dataService.updateStation(data).subscribe(() => this.getBusStations());
   }
 
   deleteStation(station): void {
     this.dataService.deleteStation(station.id);
+    return this.getBusStations();
   }
 
   filterBy(value, field) {
-    this.stations = this.temp.filter(bus => bus[field].indexOf(value.toLowerCase()) !== -1 || !value);
+    this.stations = this.temp.filter(
+      bus => bus[field].indexOf(value.toLowerCase()) !== -1 || !value
+    );
   }
 
   ngOnInit() {

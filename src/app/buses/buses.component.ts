@@ -94,9 +94,11 @@ export class BusesComponent implements OnInit {
   deleteBus(busData): void {
     const { id: busID, stationId } = busData;
     const busStation = this.stations.find(station => station.id === stationId);
-    const busSlot = busStation.slots.find(slot => slot.busId === busID);
-    delete busSlot.busId;
-    busStation.availableSlots++;
+    if (busStation) {
+      const busSlot = busStation.slots.find(slot => slot.busId === busID);
+      delete busSlot.busId;
+      busStation.availableSlots++;
+    }
     this.dataService.deleteBus(busID, busStation);
     return this.getBuses();
   }

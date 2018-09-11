@@ -23,15 +23,14 @@
       "id": 2,
       "name": "station green",
       "numOfSlots": 2,
-      "availableSlots": 0,
+      "availableSlots": 1,
       "slots": [
         {
           "id": 11,
           "busId": 13
         },
         {
-          "id": 21,
-          "busId": 14
+          "id": 21
         }
       ]
     },
@@ -39,14 +38,15 @@
       "id": 500,
       "name": "station beryl",
       "numOfSlots": 4,
-      "availableSlots": 3,
+      "availableSlots": 2,
       "slots": [
         {
           "id": 16,
           "busId": 11
         },
         {
-          "id": 19
+          "id": 19,
+          "busId": 782
         },
         {
           "id": 39
@@ -57,16 +57,25 @@
       ]
     },
     {
-      "name": "Salvatore",
-      "numOfSlots": 2,
-      "id": 60,
-      "availableSlots": 2,
+      "name": "South Park",
+      "numOfSlots": 5,
+      "id": 432,
+      "availableSlots": 5,
       "slots": [
         {
-          "id": 39
+          "id": 5
         },
         {
-          "id": 63
+          "id": 12
+        },
+        {
+          "id": 85
+        },
+        {
+          "id": 11
+        },
+        {
+          "id": 20
         }
       ]
     }
@@ -94,18 +103,18 @@
       "plateNumber": "BUS-XXX-ZZZ"
     },
     {
-      "id": 14,
-      "name": "bus-black",
-      "type": "regular",
-      "stationId": 2,
-      "plateNumber": "BUS-XYZ-XXX"
-    },
-    {
       "id": 72,
       "name": "Holley Vans",
       "type": "regular",
       "stationId": 1,
       "plateNumber": "BUS-72-72"
+    },
+    {
+      "name": "Jorg Valley",
+      "type": "doubledecker",
+      "id": 782,
+      "stationId": 500,
+      "plateNumber": "BUS-C3B-959"
     }
   ]
 }
