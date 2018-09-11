@@ -11,3 +11,22 @@ h1 {
 .nav > li {
   margin-right: 30px;
 }
+
+.bus-btn {
+  background-color: #69B218;
+  color: white;
+}
+
+.bus-btn:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.stat-btn {
+  background-color: black;
+  color: white;
+}
+
+.stat-btn:hover {
+  color: black;
+}
