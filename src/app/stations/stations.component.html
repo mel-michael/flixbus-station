@@ -46,7 +46,7 @@
               <th>Delete</th>
             </thead>
             <tbody>
-              <tr *ngFor="let station of stations | paginate: { itemsPerPage: 2, currentPage: page }; let i=index;">
+              <tr *ngFor="let station of stations | paginate: { itemsPerPage: 10, currentPage: page }; let i=index;">
                 <td>
                   <p class="summary">{{i + 1}}</p>
                 </td>

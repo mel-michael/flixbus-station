@@ -36,7 +36,11 @@ export class StationsComponent implements OnInit {
       slots: this.createSlot(numOfSlots)
     };
     this.dataService.createStation(newStation)
-      .subscribe(() => this.getBusStations(), error => console.error(error));
+      .subscribe(() => {
+        this.getBusStations()
+        this.toggleForm();
+        this.stationForm.reset();
+      }, error => console.error(error));
   }
 
   editStation() {
@@ -64,12 +68,15 @@ export class StationsComponent implements OnInit {
 
   editForm(data) {
     this.showEditForm = true;
+    this.showAddBtn = false;
     this.stationForm.setValue({ name: data.name, numOfSlots: data.numOfSlots })
     this.tempEditData = data;
   }
 
   closeEditForm() {
     this.showEditForm = false;
+    this.showAddBtn = !this.showAddBtn;
+    this.stationForm.reset();
   }
 
   createSlot(len) {

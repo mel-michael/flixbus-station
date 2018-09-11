@@ -89,16 +89,19 @@
       "name": "Fantastic Valley",
       "numOfSlots": 6,
       "id": 424,
-      "availableSlots": 6,
+      "availableSlots": 3,
       "slots": [
         {
-          "id": 27
+          "id": 27,
+          "busId": 8
         },
         {
-          "id": 43
+          "id": 43,
+          "busId": 384
         },
         {
-          "id": 34
+          "id": 34,
+          "busId": 139
         },
         {
           "id": 59
@@ -108,6 +111,46 @@
         },
         {
           "id": 80
+        }
+      ]
+    },
+    {
+      "name": "Sapphire",
+      "numOfSlots": 4,
+      "id": 792,
+      "availableSlots": 4,
+      "slots": [
+        {
+          "id": 100
+        },
+        {
+          "id": 33
+        },
+        {
+          "id": 84
+        },
+        {
+          "id": 52
+        }
+      ]
+    },
+    {
+      "name": "Reactor Vale",
+      "numOfSlots": 4,
+      "id": 753,
+      "availableSlots": 4,
+      "slots": [
+        {
+          "id": 41
+        },
+        {
+          "id": 93
+        },
+        {
+          "id": 48
+        },
+        {
+          "id": 64
         }
       ]
     }
@@ -168,6 +211,27 @@
       "id": 125,
       "stationId": 500,
       "plateNumber": "BUS-183-D50"
+    },
+    {
+      "name": "Shallom JVC",
+      "type": "doubledecker",
+      "id": 8,
+      "stationId": 424,
+      "plateNumber": "BUS-2B0-FE0"
+    },
+    {
+      "name": "Terwase",
+      "type": "doubledecker",
+      "id": 384,
+      "stationId": 424,
+      "plateNumber": "BUS-5A5-BF3"
+    },
+    {
+      "name": "Blessinbg",
+      "type": "doubledecker",
+      "id": 139,
+      "stationId": 424,
+      "plateNumber": "BUS-976-6C8"
     }
   ]
 }

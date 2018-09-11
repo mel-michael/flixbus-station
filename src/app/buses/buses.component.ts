@@ -56,7 +56,11 @@ export class BusesComponent implements OnInit {
     });
 
     this.dataService.createBus(busData, station)
-      .subscribe(() => this.getBuses(), error => console.error(error));
+      .subscribe(() => {
+        this.getBuses();
+        this.toggleForm();
+        this.busForm.reset();
+      }, error => console.error(error));
   }
 
   editBus() {
@@ -109,6 +113,7 @@ export class BusesComponent implements OnInit {
 
   editForm(data) {
     this.showEditForm = true;
+    this.showAddBtn = false;
     this.busForm.setValue({
       name: data.name,
       type: data.type,
@@ -119,6 +124,8 @@ export class BusesComponent implements OnInit {
 
   closeEditForm() {
     this.showEditForm = false;
+    this.showAddBtn = !this.showAddBtn;
+    this.busForm.reset();
   }
 
   getBuses(): void {

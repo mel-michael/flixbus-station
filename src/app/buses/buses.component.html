@@ -89,7 +89,7 @@
             <th>Delete</th>
           </thead>
           <tbody>
-            <tr *ngFor="let bus of buses | paginate: { itemsPerPage: 3, currentPage: page }; let i=index;">
+            <tr *ngFor="let bus of buses | paginate: { itemsPerPage: 10, currentPage: page }; let i=index;">
               <td>
                 <p class="summary">{{i + 1}}</p>
               </td>
