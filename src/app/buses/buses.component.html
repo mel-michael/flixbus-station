@@ -29,6 +29,29 @@
         <button type="submit" class="btn btn-success">Add Bus</button>
       </form>
     </div>
+    <div *ngIf="showEditForm" class="col-md-12">
+      <form class="form-inline" [formGroup]="busForm" (ngSubmit)="editBus()">
+        <div class="form-group">
+          <label for="name">Bus Name</label>
+          <input type="text" class="form-control" id="name" formControlName="name" required>
+        </div>
+        <div class="form-group">
+          <label for="type">Bus Type</label>
+          <select class="form-control" id="type" formControlName="type" required>
+            <option *ngFor="let busType of busTypes" [value]="busType">{{busType}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="station">Station</label>
+          <select class="form-control" formControlName="station" required>
+            <option *ngFor="let station of stations" [ngValue]="station">{{station.name}}</option>
+          </select>
+        </div>
+        <p *ngIf="!isBusSlotFree" class="form-group">There is no free slot in this station.</p>
+        <button type="submit" class="btn btn-success">Save</button>
+        <button type="submit" class="btn btn-default" (click)="closeEditForm()">Cancel</button>
+      </form>
+    </div>
   </div>
   <div class="col-md-12">
     <section class="content">
@@ -84,7 +107,7 @@
                 <p class="summary">{{bus.stationName}}</p>
               </td>
               <td>
-                <button class="btn btn-primary btn-xs">
+                <button class="btn btn-primary btn-xs" (click)="editForm(bus)">
                   <span class="glyphicon glyphicon-pencil"></span>
                 </button>
               </td>

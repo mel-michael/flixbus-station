@@ -63,7 +63,7 @@
       "name": "South Park",
       "numOfSlots": 5,
       "id": 432,
-      "availableSlots": 5,
+      "availableSlots": 4,
       "slots": [
         {
           "id": 5
@@ -113,11 +113,11 @@
       "plateNumber": "BUS-72-72"
     },
     {
+      "id": 782,
       "name": "Jorg Valley",
       "type": "doubledecker",
-      "id": 782,
-      "stationId": 500,
-      "plateNumber": "BUS-C3B-959"
+      "plateNumber": "BUS-C3B-959",
+      "stationId": 500
     }
   ]
 }
