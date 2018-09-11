@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row">
     <h2>Bus List</h2>
-    <!-- <div class="col-md-8"> -->
     <div class="col-md-4">
-      <button type="submit" class="btn btn-default" (click)="showForm()">{{addFormText}}</button>
+      <!-- <div class="col-md-4"> -->
+        <button type="submit" class="btn btn-default" (click)="showForm()">{{addFormText}}</button>
+      <!-- </div> -->
     </div>
-    <!-- </div> -->
-    <div *ngIf="showAddForm" class="col-md-4">
-      <form [formGroup]="busForm" (ngSubmit)="addBus()">
+
+    <div *ngIf="showAddForm" class="col-md-12">
+      <form class="form-inline" [formGroup]="busForm" (ngSubmit)="addBus()">
         <div class="form-group">
           <label for="name">Bus Name</label>
           <input type="text" class="form-control" id="name" formControlName="name" required>
@@ -20,7 +21,7 @@
         </div>
         <div class="form-group">
           <label for="station">Station</label>
-          <select class="form-control" id="type" formControlName="station" required>
+          <select class="form-control" formControlName="station" required>
             <option *ngFor="let station of stations" [ngValue]="station">{{station.name}}</option>
           </select>
         </div>
@@ -32,12 +33,34 @@
   <div class="col-md-12">
     <section class="content">
       <div class="table-container">
+        <div class="form-inline pull-right">
+          <div class="form-group">
+            <label for="sort">Sort By:</label>
+          </div>
+          <div class="form-group">
+            <label for="name">Bus Name: </label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="form-group">
+            <label for="type">Bus Type: </label>
+            <select class="form-control" id="type">
+              <option *ngFor="let busType of busTypes" [value]="busType">{{busType}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="station">Station: </label>
+            <select class="form-control">
+              <option *ngFor="let station of stations" [value]="station">{{station.name}}</option>
+            </select>
+          </div>
+        </div>
         <table class="table table-filter">
           <thead>
             <th>S/N</th>
             <th>Name</th>
             <th>Bus Number</th>
             <th>Bus Type</th>
+            <th>Bus Station</th>
             <th>Edit</th>
             <th>Delete</th>
           </thead>
@@ -54,6 +77,9 @@
               </td>
               <td>
                 <p class="summary">{{bus.type}}</p>
+              </td>
+              <td>
+                <p class="summary">{{bus.stationName}}</p>
               </td>
               <td>
                 <p data-placement="top" data-toggle="tooltip" title="Edit">

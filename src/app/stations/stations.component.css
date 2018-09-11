@@ -10,6 +10,15 @@ ul>li>span {
   background-color: #599158;
 }
 
+.form-inline {
+  margin-top: 30px;
+}
+
+.form-inline .form-group {
+  margin-right: 30px;
+}
+
+
 /*	--------------------------------------------------
 	:: Table
 	-------------------------------------------------- */

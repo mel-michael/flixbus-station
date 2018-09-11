@@ -1,3 +1,7 @@
-.content {
-  margin-top: 50px;
+.form-inline {
+  margin: 30px 0;
+}
+
+.form-inline .form-group {
+  margin-right: 30px;
 }

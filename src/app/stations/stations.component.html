@@ -4,8 +4,8 @@
     <div class="col-md-4">
       <button type="submit" class="btn btn-default" (click)="showForm()">{{addFormText}}</button>
     </div>
-    <div *ngIf="showAddForm"  class="col-md-4">
-      <form class="form" [formGroup]="stationForm" (ngSubmit)="addStation()">
+    <div *ngIf="showAddForm"  class="col-md-12">
+      <form class="form-inline" [formGroup]="stationForm" (ngSubmit)="addStation()">
         <div class="form-group">
           <label for="name">Station Name: </label>
           <input type="text" class="form-control" id="name" formControlName="name" placeholder="e.g. Beryl" required>

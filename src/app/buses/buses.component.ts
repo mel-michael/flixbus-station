@@ -70,7 +70,14 @@ export class BusesComponent implements OnInit {
 
   getBusStations(): void {
     this.dataService.getStations()
-      .subscribe(data => this.stations = data,
+      .subscribe(data => {
+        this.stations = data;
+        this.buses = this.buses.map(bus => {
+          const busStation = this.stations.find(station => station.id === bus.stationId);
+          bus.stationName = busStation.name;
+          return bus;
+        });
+      },
         error => console.log('Error:', error)
       );
   }
