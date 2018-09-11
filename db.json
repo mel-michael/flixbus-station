@@ -2,8 +2,8 @@
   "station": [
     {
       "id": 1,
-      "name": "station blue",
-      "numOfSlots": 3,
+      "name": "station blues",
+      "numOfSlots": 4,
       "availableSlots": 1,
       "slots": [
         {
@@ -16,6 +16,9 @@
         {
           "id": 13,
           "busId": 12
+        },
+        {
+          "id": 27
         }
       ]
     },

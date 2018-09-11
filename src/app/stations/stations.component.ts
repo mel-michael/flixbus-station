@@ -16,7 +16,9 @@ export class StationsComponent implements OnInit {
     numOfSlots: new FormControl('')
   });
   showAddForm = false;
+  showEditForm = false;
   addFormText = 'Add Station';
+  tempEditData;
 
   constructor(private dataService: DataService) {}
 
@@ -31,14 +33,40 @@ export class StationsComponent implements OnInit {
       slots: this.createSlot(numOfSlots)
     };
     this.dataService.createStation(newStation)
-      .subscribe(() => this.getBusStations(),
-        error => console.log('Error:', error)
-      );
+      .subscribe(() => this.getBusStations(), error => console.error(error));
+  }
+
+  editStation() {
+    const { name, numOfSlots: newNumOfSlots } = this.stationForm.value;
+    const { id, numOfSlots: oldNumOfSlots, slots } = this.tempEditData;
+    const newAvailableSlots = newNumOfSlots - oldNumOfSlots;
+    const newSlots = this.createSlot(newAvailableSlots);
+
+    const editedStation = {
+      id,
+      name,
+      numOfSlots: newNumOfSlots,
+      availableSlots: newAvailableSlots,
+      slots: [...slots, ...newSlots]
+    };
+
+    this.dataService.updateStation(editedStation)
+      .subscribe(() => this.getBusStations(), error => console.log(error));
   }
 
   showForm() {
     this.showAddForm = !this.showAddForm;
     this.addFormText = this.showAddForm ? 'Close Station' : 'Add Station';
+  }
+
+  editForm(data) {
+    this.showEditForm = true;
+    this.stationForm.setValue({ name: data.name, numOfSlots: data.numOfSlots })
+    this.tempEditData = data;
+  }
+
+  closeEditForm() {
+    this.showEditForm = false;
   }
 
   createSlot(len) {
