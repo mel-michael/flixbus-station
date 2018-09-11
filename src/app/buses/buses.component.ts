@@ -101,8 +101,18 @@ export class BusesComponent implements OnInit {
     return this.getBuses();
   }
 
-  filterBy(value, field) {
-    this.buses = this.temp.filter(bus => bus[field].indexOf(value.toLowerCase()) !== -1 || !value);
+  filterBy(value, props) {
+    if (value === 'all' || !value) {
+      this.buses = this.temp;
+      return null;
+    }
+
+    if (props === 'station') {
+      this.buses = this.temp.filter(bus => bus['stationId'] === parseInt(value, 10));
+      return null;
+    }
+
+    this.buses = this.temp.filter(bus => bus[props].toLowerCase().includes(value.toLowerCase()));
   }
 
   ngOnInit() {

@@ -43,14 +43,16 @@
           </div>
           <div class="form-group">
             <label for="type">Bus Type: </label>
-            <select class="form-control" #busType (onchange)="filterBy(busType.value, 'type')">
+            <select class="form-control" #busType (change)="filterBy(busType.value, 'type')">
+              <option value="all">All</option>
               <option *ngFor="let busType of busTypes" [value]="busType">{{busType}}</option>
             </select>
           </div>
           <div class="form-group">
             <label for="station">Station: </label>
-            <select class="form-control" #busStation (onchange)="filterBy(busStation.value, 'station')">
-              <option *ngFor="let station of stations" [value]="station">{{station.name}}</option>
+            <select class="form-control" #busStation (change)="filterBy(busStation.value, 'station')">
+              <option value="all">All</option>
+              <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
             </select>
           </div>
         </div>
