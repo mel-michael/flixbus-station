@@ -12,6 +12,7 @@ import { DataService } from '../data.service';
 export class BusesComponent implements OnInit {
   buses;
   stations;
+  temp;
   busForm =  new FormGroup({
     name: new FormControl(''),
     type: new FormControl(''),
@@ -63,7 +64,10 @@ export class BusesComponent implements OnInit {
 
   getBuses(): void {
     this.dataService.getBuses()
-      .subscribe(data => this.buses = data,
+      .subscribe(data => {
+        this.buses = data;
+        this.temp = data;
+      },
         error => console.log('Error:', error)
       );
   }
@@ -95,6 +99,10 @@ export class BusesComponent implements OnInit {
     busStation.availableSlots++;
     this.dataService.deleteBus(busID, busStation);
     return this.getBuses();
+  }
+
+  filterBy(value, field) {
+    this.buses = this.temp.filter(bus => bus[field].indexOf(value.toLowerCase()) !== -1 || !value);
   }
 
   ngOnInit() {

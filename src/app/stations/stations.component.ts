@@ -10,6 +10,7 @@ import { DataService } from '../data.service';
 })
 export class StationsComponent implements OnInit {
   stations;
+  temp;
   slots = [];
   stationForm = new FormGroup({
     name: new FormControl(''),
@@ -50,7 +51,10 @@ export class StationsComponent implements OnInit {
 
   getBusStations(): void {
     this.dataService.getStations()
-      .subscribe(data => this.stations = data,
+      .subscribe(data => {
+        this.stations = data;
+        this.temp = data;
+      },
         error => console.log('Error:', error)
       );
   }
@@ -64,18 +68,9 @@ export class StationsComponent implements OnInit {
     this.dataService.deleteStation(station.id);
   }
 
-  // onKey(value) {
-  //   console.log(value);
-  //   const val = value.toLowerCase();
-
-  //   // filter our data
-  //   const temp = this.stations.filter((d) => {
-  //     return d.name.toLowerCase().indexOf(val) !== -1 || !val;
-  //   });
-
-  //   // update the rows
-  //   this.stations = temp;
-  // }
+  filterBy(value, field) {
+    this.stations = this.temp.filter(bus => bus[field].indexOf(value.toLowerCase()) !== -1 || !value);
+  }
 
   ngOnInit() {
     this.getBusStations();
