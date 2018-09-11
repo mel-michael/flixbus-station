@@ -38,8 +38,8 @@
             <label for="sort">Sort By:</label>
           </div>
           <div class="form-group">
-            <label for="bus-name">Bus Name: </label>
-            <input type="text" class="form-control" #busName (keyup)="filterBy(busName.value, 'name')">
+            <label for="bus-name">Bus Number: </label>
+            <input type="text" class="form-control" #busNum (keyup)="filterBy(busNum.value, 'plateNumber')">
           </div>
           <div class="form-group">
             <label for="type">Bus Type: </label>
