@@ -23,6 +23,7 @@ export class BusesComponent implements OnInit {
   showAddForm = false;
   addFormText = 'Add Bus';
   showEditForm = false;
+  showAddBtn = true;
   tempEditData;
 
   constructor(private dataService: DataService) {}
@@ -58,6 +59,7 @@ export class BusesComponent implements OnInit {
   }
 
   editBus() {
+    if (this.busForm.invalid) { return null; }
     const { name, type, station } = this.busForm.value;
     const { id, plateNumber, stationId } = this.tempEditData;
     const editedBusData = {
@@ -99,13 +101,17 @@ export class BusesComponent implements OnInit {
       }, error => console.log(error));
   }
 
-  showForm() {
+  // showForm() {
+  //   this.showAddForm = !this.showAddForm;
+  //   this.showAddBtn = !this.showAddBtn;
+  // }
+
+  toggleForm() {
     this.showAddForm = !this.showAddForm;
-    this.addFormText = this.showAddForm ? 'Close Station' : 'Add Station';
+    this.showAddBtn = !this.showAddBtn;
   }
 
   editForm(data) {
-    console.log(data);
     this.showEditForm = true;
     this.busForm.setValue({
       name: data.name,

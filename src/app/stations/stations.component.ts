@@ -19,10 +19,12 @@ export class StationsComponent implements OnInit {
   showEditForm = false;
   addFormText = 'Add Station';
   tempEditData;
+  showAddBtn = true;
 
   constructor(private dataService: DataService) {}
 
   addStation(): void {
+    if (this.stationForm.invalid) { return null; }
     const randNum = Math.ceil(Math.random() * 1000);
     const { name, numOfSlots } = this.stationForm.value;
     const newStation = {
@@ -54,9 +56,9 @@ export class StationsComponent implements OnInit {
       .subscribe(() => this.getBusStations(), error => console.log(error));
   }
 
-  showForm() {
+  toggleForm() {
     this.showAddForm = !this.showAddForm;
-    this.addFormText = this.showAddForm ? 'Close Station' : 'Add Station';
+    this.showAddBtn = !this.showAddBtn;
   }
 
   editForm(data) {

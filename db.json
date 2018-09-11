@@ -41,7 +41,7 @@
       "id": 500,
       "name": "station beryl",
       "numOfSlots": 4,
-      "availableSlots": 2,
+      "availableSlots": 1,
       "slots": [
         {
           "id": 16,
@@ -52,7 +52,8 @@
           "busId": 782
         },
         {
-          "id": 39
+          "id": 39,
+          "busId": 125
         },
         {
           "id": 63
@@ -63,13 +64,15 @@
       "name": "South Park",
       "numOfSlots": 5,
       "id": 432,
-      "availableSlots": 4,
+      "availableSlots": 2,
       "slots": [
         {
-          "id": 5
+          "id": 5,
+          "busId": 408
         },
         {
-          "id": 12
+          "id": 12,
+          "busId": 367
         },
         {
           "id": 85
@@ -118,6 +121,27 @@
       "type": "doubledecker",
       "plateNumber": "BUS-C3B-959",
       "stationId": 500
+    },
+    {
+      "name": "Chelsea Bolt",
+      "type": "doubledecker",
+      "id": 408,
+      "stationId": 432,
+      "plateNumber": "BUS-C94-289"
+    },
+    {
+      "name": "HBS Flight",
+      "type": "regular",
+      "id": 367,
+      "stationId": 432,
+      "plateNumber": "BUS-5C8-261"
+    },
+    {
+      "name": "Saw May",
+      "type": "doubledecker",
+      "id": 125,
+      "stationId": 500,
+      "plateNumber": "BUS-183-D50"
     }
   ]
 }

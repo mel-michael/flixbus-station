@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <h2>Bus Stations</h2>
-    <div class="col-md-4">
-      <button type="submit" class="btn btn-default" (click)="showForm()">{{addFormText}}</button>
+    <div *ngIf="showAddBtn" class="col-md-4">
+      <button type="submit" class="btn btn-default" (click)="toggleForm()">Add Station</button>
     </div>
     <div *ngIf="showAddForm" class="col-md-12">
       <form class="form-inline" [formGroup]="stationForm" (ngSubmit)="addStation()">
@@ -16,6 +16,7 @@
             required>
         </div>
         <button type="submit" class="btn btn-success">Add Station</button>
+        <button type="submit" class="btn btn-default" (click)="toggleForm()">Close</button>
       </form>
     </div>
     <div *ngIf="showEditForm" class="col-md-12">
