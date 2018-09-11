@@ -57,6 +57,19 @@ export class StationsComponent implements OnInit {
     this.dataService.deleteStation(station.id);
   }
 
+  // onKey(value) {
+  //   console.log(value);
+  //   const val = value.toLowerCase();
+
+  //   // filter our data
+  //   const temp = this.stations.filter((d) => {
+  //     return d.name.toLowerCase().indexOf(val) !== -1 || !val;
+  //   });
+
+  //   // update the rows
+  //   this.stations = temp;
+  // }
+
   ngOnInit() {
     this.getBusStations();
   }
