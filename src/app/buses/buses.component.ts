@@ -19,6 +19,8 @@ export class BusesComponent implements OnInit {
   });
   busTypes = [ 'regular', 'doubledecker'];
   isBusSlotFree = true;
+  showAddForm = false;
+  addFormText = 'Add Station';
 
   constructor(private dataService: DataService) { }
 
@@ -52,6 +54,11 @@ export class BusesComponent implements OnInit {
       .subscribe(() => this.getBuses(),
         error => console.log('Error:', error)
       );
+  }
+
+  showForm() {
+    this.showAddForm = !this.showAddForm;
+    this.addFormText = this.showAddForm ? 'Close Station' : 'Add Station';
   }
 
   getBuses(): void {
