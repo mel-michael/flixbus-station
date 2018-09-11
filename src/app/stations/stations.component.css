@@ -10,10 +10,13 @@ ul>li>span {
   background-color: #599158;
 }
 
-
 /*	--------------------------------------------------
 	:: Table
 	-------------------------------------------------- */
+
+.content {
+  margin-top: 50px;
+}
 
 .table-filter {
   background-color: #fff;
