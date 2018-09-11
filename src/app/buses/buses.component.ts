@@ -25,8 +25,9 @@ export class BusesComponent implements OnInit {
   showEditForm = false;
   showAddBtn = true;
   tempEditData;
+  page = 1;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) { }
 
   addBus(): void {
     this.isBusSlotFree = true;
@@ -101,11 +102,6 @@ export class BusesComponent implements OnInit {
       }, error => console.log(error));
   }
 
-  // showForm() {
-  //   this.showAddForm = !this.showAddForm;
-  //   this.showAddBtn = !this.showAddBtn;
-  // }
-
   toggleForm() {
     this.showAddForm = !this.showAddForm;
     this.showAddBtn = !this.showAddBtn;
@@ -131,7 +127,7 @@ export class BusesComponent implements OnInit {
         this.buses = data;
         this.tempBusData = data;
       }, error => console.error(error)
-    );
+      );
   }
 
   getBusStations(): void {
@@ -144,8 +140,8 @@ export class BusesComponent implements OnInit {
           return bus;
         });
       },
-      error => console.error(error)
-    );
+        error => console.error(error)
+      );
   }
 
   updateBus(data): void {

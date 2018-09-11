@@ -20,6 +20,7 @@ export class StationsComponent implements OnInit {
   addFormText = 'Add Station';
   tempEditData;
   showAddBtn = true;
+  page = 1;
 
   constructor(private dataService: DataService) {}
 
