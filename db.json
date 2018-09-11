@@ -84,6 +84,32 @@
           "id": 20
         }
       ]
+    },
+    {
+      "name": "Fantastic Valley",
+      "numOfSlots": 6,
+      "id": 424,
+      "availableSlots": 6,
+      "slots": [
+        {
+          "id": 27
+        },
+        {
+          "id": 43
+        },
+        {
+          "id": 34
+        },
+        {
+          "id": 59
+        },
+        {
+          "id": 88
+        },
+        {
+          "id": 80
+        }
+      ]
     }
   ],
   "bus": [
