@@ -19,4 +19,16 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
+
+  it('should render navigation links', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    const navLinks = compiled.querySelectorAll ('ul li a');
+
+    expect(navLinks.length).toEqual(3);
+    expect(navLinks[0].textContent).toContain('Home');
+    expect(navLinks[1].textContent).toContain('Buses');
+    expect(navLinks[2].textContent).toContain('Stations');
+  }));
 });
